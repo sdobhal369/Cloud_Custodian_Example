@@ -36,5 +36,5 @@ $ pip install c7n_gcp
 
 $ source custodian/bin/activate 
 
-# every time whenver we want to use custodian on a fresh/new Terminal.
+# every time whenever we want to use custodian on a fresh/new Terminal.
 ```
