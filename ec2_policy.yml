@@ -1,0 +1,16 @@
+policies:
+
+- name: ec2-auto-tag
+  resource: aws.ec2
+  comment: |
+    Creating tags & filtering tags.
+  
+  filters:
+   - or:
+     - tag:Name: present
+     - tag:ENV: absent
+     
+  actions:
+    - type: tag
+      tags:
+        ENV: DEV

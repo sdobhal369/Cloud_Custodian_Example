@@ -1,0 +1,4 @@
+queue_url: https://sqs.us-east-1.amazonaws.com/12345678900/cloud-custodian-mailer
+region: eu-west-1
+role: arn:aws:iam::12345678900:role/iam-role-custodian
+from_address: CloudCustodian@Company.com

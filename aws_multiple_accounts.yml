@@ -1,0 +1,28 @@
+accounts:
+- account_id: '3333333333333'
+  name: development-account
+  regions:
+  - eu-west-1
+  role: arn:aws:iam::3333333333333:role/dev-role-custodian
+  vars:
+    account: development
+  tags:
+  - type:nonprod
+- account_id: '444444444444'
+  name: staging-account
+  regions:
+  - eu-west-1
+  role: arn:aws:iam::444444444444:role/sta-role-custodian
+  vars:
+    account: staging
+  tags:
+  - type:nonprod
+- account_id: '666666666666'
+  name: production-account
+  regions:
+  - eu-west-1
+  role: arn:aws:iam::666666666666:role/prd-role-custodian
+  vars:
+    account: production
+  tags:
+  - type:prod
