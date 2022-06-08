@@ -1,16 +1,35 @@
 policies:
 
-- name: ec2-auto-tag
+- name: ec2-prod-tag
   resource: aws.ec2
   comment: |
-    Creating tags & filtering tags.
+    Creating tags.
   
-  filters:
-   - or:
-     - tag:Name: present
-     - tag:ENV: absent
-     
+  filters: 
+    - and:
+      - "tag:env": absent
+      - type: value
+        key: "tag:Name"
+        value: '.*(Production).*'
+        op: regex
   actions:
     - type: tag
       tags:
-        ENV: DEV
+        env: prod
+        
+- name: ec2-dev-tag
+  resource: aws.ec2
+  comment: |
+    Creating tags.
+  
+  filters: 
+    - and:
+      - "tag:env": absent
+      - type: value
+        key: "tag:Name"
+        value: '.*(Development).*'
+        op: regex
+  actions:
+    - type: tag
+      tags:
+        env: dev
